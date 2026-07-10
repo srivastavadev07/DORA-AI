@@ -1,6 +1,8 @@
 from modules.apps import open_app
 from modules.browser import open_website
 from modules.system import system_commands
+from ai.gemini import ask_gemini
+
 
 def route_command(command):
 
@@ -19,4 +21,5 @@ def route_command(command):
     if response:
         return response
 
-    return None
+    # If no command matches, ask Gemini
+    return ask_gemini(command)

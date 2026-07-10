@@ -17,3 +17,6 @@ database/*.db
 # OS Files
 .DS_Store
 Thumbs.db
+
+
+# New-Item -Path .env -ItemType File
