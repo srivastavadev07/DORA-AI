@@ -6,20 +6,20 @@ recognizer = sr.Recognizer()
 
 recognizer.dynamic_energy_threshold = True
 
-recognizer.energy_threshold = 50
+recognizer.energy_threshold = 40
 
-recognizer.pause_threshold = 0.8
+recognizer.pause_threshold = 0.7
 
-recognizer.non_speaking_duration = 0.3
+recognizer.non_speaking_duration = 0.2
 
 recognizer.operation_timeout = None
 def listen():
 
-    with sr.Microphone() as source:
+    with sr.Microphone(device_index=13) as source:
 
         print("\n🎤 Listening...")
 
-        recognizer.adjust_for_ambient_noise(source, duration=0.3)
+        recognizer.adjust_for_ambient_noise(source, duration=0.5)
 
         try:
             audio = recognizer.listen(

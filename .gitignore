@@ -19,4 +19,4 @@ database/*.db
 Thumbs.db
 
 
-# New-Item -Path .env -ItemType File
+# New-Item -Path .mic_test.py -ItemType File
