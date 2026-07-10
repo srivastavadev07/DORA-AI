@@ -1,15 +1,12 @@
 import os
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
 
 # Load environment variables
 load_dotenv()
 
-# Configure Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-# Load model
-model = genai.GenerativeModel("gemini-2.5-flash")
+# Create client
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 def ask_gemini(prompt):
@@ -18,15 +15,20 @@ def ask_gemini(prompt):
     """
 
     try:
-        response = model.generate_content(
-    f"""
-    You are DORA, an intelligent desktop AI assistant.
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=f"""
+You are DORA, an intelligent desktop AI assistant.
 
-    Keep spoken responses concise (2-4 sentences) unless the user explicitly asks for a detailed explanation.
+Rules:
+- Keep spoken responses concise (2-4 sentences).
+- Be friendly.
+- If the user asks for a long explanation, provide it.
 
-    User: {prompt}
-    """
-)
+User:
+{prompt}
+"""
+        )
 
         return response.text
 

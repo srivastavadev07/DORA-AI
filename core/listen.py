@@ -15,7 +15,7 @@ recognizer.non_speaking_duration = 0.2
 recognizer.operation_timeout = None
 def listen():
 
-    with sr.Microphone(device_index=13) as source:
+    with sr.Microphone() as source:
 
         print("\n🎤 Listening...")
 
