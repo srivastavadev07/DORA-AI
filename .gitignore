@@ -18,5 +18,4 @@ database/*.db
 .DS_Store
 Thumbs.db
 
-
-#  New-Item -Path test_gemini.py -ItemType File
+New-Item -Path test_new_sdk.py -ItemType File
