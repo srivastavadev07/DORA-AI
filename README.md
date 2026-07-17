@@ -31,7 +31,7 @@ An AI-powered desktop assistant built with Python that can understand voice comm
 ## 🎥 Demo Video
 
 Watch the demo here:
-https://youtube.com/...
+https://youtu.be/XGnfxdEztcU
 
 
 ## 🚀 Installation
